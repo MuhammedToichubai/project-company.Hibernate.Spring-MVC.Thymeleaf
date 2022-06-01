@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-image: url('https://cdn.iview.abc.net.au/thumbs/i/ck/CK1714V_59a4b949bbec1_1280.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+<body>
+<form th:method="POST" th:action="@{saveTeacher}" th:object="${teacher1}">
+    <label for="firstName">Enter teacher name</label>
+    <input type="text" th:field="*{firstName}" id="firstName" placeholder="first name">
+    <br/>
+    <label for="LastName">Enter lastName</label>
+    <input type="text" th:field="*{lastName}" id="LastName" placeholder="last name">
+    <br/>
+    <label for="email">Enter email</label>
+    <input type="text" th:field="*{email}" id="email" placeholder="email">\
+    <br/>
+    <label for="courseId">Enter course id</label>
+    <input type="text" th:field="*{courseId}" id="courseId" placeholder="course_id">
+    <input type="submit" value="Create"/>
+</form>
+
+</body>
+</html>

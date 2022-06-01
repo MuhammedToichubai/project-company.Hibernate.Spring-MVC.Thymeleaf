@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Company</title>
+    <style>
+        body {
+            background-image: url('https://kinsta.com/wp-content/uploads/2019/08/How-to-Create-a-Company-Page-on-Linkedin.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+
+<body >
+
+
+<table style="background-color: yellow">
+    <form th:method="POST" th:action="@{save}"th:object="${company1}">
+        <label for="companyName" style="border-bottom: yellow " th:align="center">Company name</label>
+        <input type="text" th:field="*{companyName}" id="companyName" placeholder="company name"/>
+        <label for="locatedCountry" style="border-bottom: yellow " th:align="center">Located country</label>
+        <input type="text" th:field="*{locatedCountry}" id="locatedCountry" placeholder="located country"/>
+        <br/>
+        <input type="submit" value="create">
+        <br>
+        <th><a href="/api">
+            <button type="button" class="btn btn-dark" th:align="center">go back</button>
+        </a></th>
+    </form>
+</table>
+
+</body>
+</html>

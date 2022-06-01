@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-image: url('https://cdn.iview.abc.net.au/thumbs/i/ck/CK1714V_59a4b949bbec1_1280.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+<body>
+<form th:method="POST" th:action="@{saveGroup}" th:object="${group1}">
+    <label for="groupName">Enter  group name</label>
+    <input type="text" th:field="*{groupName}" id="groupName" placeholder="group name" >
+    <label for="dateOfStart">Enter date of start</label>
+    <input type="text" th:field="*{dateOfStart}" id="dateOfStart" placeholder="date of start">
+    <label for="dateOfFinish">Enter date of finish</label>
+    <input type="text" th:field="*{dateOfFinish}" id="dateOfFinish" placeholder="date of finish">
+    <label for="courseID">Enter course id</label>
+    <input type="text" th:field="*{courseId}" id="courseID" placeholder="course_id">
+    <br/>
+
+    <input type="submit" value="Create"/>
+</form>
+
+</body>
+</html>

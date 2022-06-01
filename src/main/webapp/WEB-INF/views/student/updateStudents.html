@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+    <style>
+        body {
+            background-image: url('https://blog.leotheme.com/wp-content/uploads/2018/11/Update-Colorful.jpeg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+
+<body>
+<div class="student">
+    <form th:method="PATCH" th:action="@{/student/{id}/{id}(id=${updateStu.getId()})}"
+          th:object="${updateStu}">
+        <label for="firstName">Enter name: </label>
+        <input type="text" th:field="*{firstName}" id="firstName"/>
+        <br/>
+        <label for="email">Enter email: </label>
+        <input type="text" th:field="*{email}" id="email"/>
+        <br/>
+        <label for="lastName">Enter lasName: </label>
+        <input type="text" th:field="*{lastName}" id="lastName"/>
+        <br/>
+        <label for="study Format">Enter studyFormat: </label>
+        <input type="text" th:field="*{studyFormat}" id="study Format"/>
+        <br/>
+
+        <input type="submit" value="Update!"/>
+    </form>
+</div>
+</body>
+</html>

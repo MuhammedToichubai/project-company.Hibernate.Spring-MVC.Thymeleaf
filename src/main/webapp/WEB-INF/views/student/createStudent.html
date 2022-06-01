@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        body {
+            background-image: url('https://lh3.googleusercontent.com/a-/AOh14GjHYvwNaU0kv91_CAinrml8nLXk1cUY7Mw6MuvK=s288-p-rw-no');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+<body>
+<form th:method="POST" th:action="@{saveStudent}" th:object="${student1}">
+    <label for="firstName">Enter Student name</label>
+    <input type="text" th:field="*{firstName}" id="firstName" placeholder="first name">
+    <label for="email">Enter email</label>
+    <input type="text" th:field="*{email}" id="email" placeholder="email">
+    <label for="LastName">Enter lastName</label>
+    <input type="text" th:field="*{lastName}" id="LastName" placeholder="last name">
+    <br/>
+    <label for="studyFormat">Enter studyFormat</label>
+    <input type="text" th:field="*{studyFormat}" id="studyFormat" placeholder="study format">
+    <br/>
+    <label for="groupID">Enter groupId</label>
+    <input type="text" th:field="*{groupId}" id="groupID" placeholder="group_id">
+    <input type="submit" value="Create"/>
+</form>
+
+</body>
+</html>
