@@ -36,7 +36,6 @@ public class Teacher {
     private Long courseId;
 
     @OneToOne(cascade = {CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
-
     @JoinColumn(name = "course_id")
     private Course course;
 

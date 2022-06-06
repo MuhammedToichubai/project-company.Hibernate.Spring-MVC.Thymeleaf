@@ -41,6 +41,7 @@ public class GroupController {
 
         group.setCourse(course);
 
+        
         groupService.save(group);
 
         return "redirect:/group/{courseId1}" ;

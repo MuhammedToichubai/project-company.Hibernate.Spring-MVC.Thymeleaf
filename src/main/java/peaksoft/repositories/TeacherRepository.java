@@ -25,7 +25,8 @@ public class TeacherRepository implements MyRepository<Teacher> {
 
     @Override
     public List<Teacher> getAll() {
-        return null;
+
+        return entityManager.createQuery("select t from Teacher t", Teacher.class).getResultList();
     }
 
     @Override

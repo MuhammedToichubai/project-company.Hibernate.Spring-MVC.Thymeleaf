@@ -44,11 +44,13 @@ public class CourseService implements MyService<Course> {
     }
 
     @Override
+    @Transactional
     public void delete(Long id) {
         courseRepo.delete(id);
     }
 
     @Override
+    @Transactional
     public List<Course> findAll(Long id) {
         return courseRepo.findAll(id);
     }

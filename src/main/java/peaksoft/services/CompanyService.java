@@ -40,17 +40,20 @@ public class CompanyService implements MyService<Company>{
     }
 
     @Override
+    @Transactional
     public void update(Long id, Company company) {
         companyRepo.update(id, company);
 
     }
 
     @Override
+    @Transactional
     public void delete(Long id) {
         companyRepo.delete(id);
     }
 
     @Override
+    @Transactional
     public List<Company> findAll(Long id) {
         return null;
     }

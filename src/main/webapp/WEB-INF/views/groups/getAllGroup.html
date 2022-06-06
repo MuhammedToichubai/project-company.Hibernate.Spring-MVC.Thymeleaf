@@ -49,7 +49,7 @@
                 <th scope="row" th:text="${group.getGroupName()}"></th>
                 <th scope="row" th:text="${group.getDateOfStart()}"></th>
                 <th scope="row" th:text="${group.getDateOfFinish()}"></th>
-                <th scope="row" th:text="${group.courseId}"></th>
+                <th scope="row" th:text="${group.getCourseId()}"></th>
 
                 <td>
                     <a href="#" th:href="@{/group/{id}/updateGroup/{id}(id=${group.getId()})}">

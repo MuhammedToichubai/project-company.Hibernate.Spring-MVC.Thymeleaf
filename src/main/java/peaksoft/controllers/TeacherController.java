@@ -14,15 +14,17 @@ import peaksoft.services.MyService;
 @Controller
 @RequestMapping("/teacher/{courseId2}")
 public class TeacherController {
+
     private final MyService<Teacher> teacherService;
     private final MyService<Course> courseService;
+
     @Autowired
     public TeacherController(MyService<Teacher> teacherService, MyService<Course> courseService) {
         this.teacherService = teacherService;
         this.courseService = courseService;
     }
     @GetMapping
-    public String getAllTeacher(@PathVariable("courseId2") long id, Model model) {
+    public String getAllTeacher(@PathVariable("courseId2") Long id, Model model) {
         model.addAttribute("teachers", teacherService.findAll(id));
         model.addAttribute("courseId", id);
         return "teacher/getTeacher";
@@ -35,7 +37,7 @@ public class TeacherController {
     }
 
     @PostMapping("/saveTeacher")
-    public String add(@PathVariable("courseId2") long id,@ModelAttribute("teacher") Teacher teacher) throws Exception {
+    public String add(@PathVariable("courseId2") Long id,@ModelAttribute("teacher") Teacher teacher) throws Exception {
         if (courseService.getById(id).getTeacher()==null) {
             teacher.setCourse(courseService.getById(teacher.getCourseId()));
             teacherService.save(teacher);
