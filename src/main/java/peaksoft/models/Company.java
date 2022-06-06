@@ -19,6 +19,7 @@ public class Company {
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
             generator = "id_generator_company")
+
     @SequenceGenerator(
             name = "id_generator_company",
             allocationSize = 1
